@@ -19,6 +19,7 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +39,7 @@ public class WxMsgService {
      * 用户的openId和前端登录场景code的映射关系
      */
     private static final String URL = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
-    @Value("${wx.mp.callback}")
+//    @Value("${wx.mp.callback}")
     private String callback;
     @Autowired
     private UserDao userDao;
