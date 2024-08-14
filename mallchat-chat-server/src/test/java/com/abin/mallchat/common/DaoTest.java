@@ -15,6 +15,7 @@ import me.chanjar.weixin.mp.bean.result.WxMpQrCodeTicket;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -78,6 +79,8 @@ public class DaoTest {
         String s = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjExMDAyLCJjcmVhdGVUaW1lIjoxNjkzNjYzOTU1fQ.qISTe8UDzggilWqz0HKtGLrkgiG1IRGafS10qHih9iM";
         Long validUid = loginService.getValidUid(s);
         System.out.println(validUid);
+        RLock lock = redissonClient.getLock(s);
+        System.out.println("lock.isHeldByCurrentThread() = " + lock.isHeldByCurrentThread());
     }
 
     @Autowired

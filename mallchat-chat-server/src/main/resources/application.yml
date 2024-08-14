@@ -1,6 +1,6 @@
 logging:
   level:
-    org.springframework.web: INFO
+    org.springframework.web: DEBUG
     com.github.binarywang.demo.wx.mp: DEBUG
     me.chanjar.weixin: DEBUG
 mybatis-plus:
@@ -11,7 +11,7 @@ mybatis-plus:
 spring:
   profiles:
     #运行的环境
-    active: my-test
+    active: test
   application:
     name: mallchat
   datasource:
@@ -33,7 +33,7 @@ spring:
     # Redis服务器端口号
     port: ${mallchat.redis.port}
     # 使用的数据库索引，默认是0
-    database: 0
+    database: 2
     # 连接超时时间
     timeout: 1800000
     # 设置密码

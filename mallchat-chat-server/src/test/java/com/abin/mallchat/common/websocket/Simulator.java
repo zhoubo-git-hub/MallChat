@@ -5,7 +5,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 
 public class Simulator {
     public static void start() {
-        String serverIp = "101.33.251.36";
+        String serverIp = "127.0.0.1";
         int serverPort = 8090;
         EventLoopGroup group = new NioEventLoopGroup();
         for (int i = 0; i < 10000; i++) {

@@ -8,6 +8,7 @@ import com.abin.mallchat.oss.MinIOTemplate;
 import com.abin.mallchat.oss.domain.OssReq;
 import com.abin.mallchat.oss.domain.OssResp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OssServiceImpl implements OssService {
+    @Lazy
     @Autowired
     private MinIOTemplate minIOTemplate;
 
